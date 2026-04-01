@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nettop"
+version = "0.4.0"
+description = "A CLI network topology analyzer: scan, map, monitor and export your network from the terminal."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["network", "topology", "scanner", "cli", "monitoring", "nmap", "prometheus"]
+authors = [{ name = "Bulat Gumerov" }]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Networking :: Monitoring",
+    "Topic :: Utilities",
+]
+
+# The tool runs on the standard library alone. These are quality-of-life extras.
+dependencies = []
+
+[project.optional-dependencies]
+yaml = ["pyyaml>=6.0"]
+dev = ["pytest>=7.0", "pyyaml>=6.0"]
+
+[project.scripts]
+nettop = "nettop.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Sliptval/network-topology-analyzer"
+Repository = "https://github.com/Sliptval/network-topology-analyzer"
+Issues = "https://github.com/Sliptval/network-topology-analyzer/issues"
+
+[tool.setuptools.packages.find]
+include = ["nettop*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
