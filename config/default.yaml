@@ -1,0 +1,35 @@
+# Example configuration for `nettop daemon`.
+#
+# Every value here has a built-in default, so a config file is only needed for
+# the daemon or to avoid repeating flags. Copy this file, edit it, and point the
+# daemon at it:  nettop daemon --config /etc/nettop/config.yaml
+
+# Network to monitor. CIDR, a range, or a comma-separated list.
+network: 192.168.1.0/24
+
+# Where to keep scan history. Leave empty for the per-user default
+# (~/.local/share/nettop/nettop.db).
+database:
+
+# How often the daemon runs a scan. Accepts s / m / h / d suffixes.
+scan_interval: 5m
+
+# Logging verbosity: DEBUG, INFO, WARNING or ERROR.
+log_level: INFO
+
+# Which conditions raise alerts.
+alerts:
+  offline: true              # a previously-seen device disappears
+  new_device: true           # a device not seen before joins
+  high_bandwidth_mbps: 500   # a link exceeds this throughput
+  slow_latency_ms: 200       # a device's latency exceeds this
+
+# Optional REST API. Bind to 127.0.0.1 unless you really want it reachable.
+api:
+  enabled: false
+  bind: 127.0.0.1:8080
+
+# Optional Prometheus metrics endpoint (served at /metrics on the API server).
+prometheus:
+  enabled: false
+  bind: 127.0.0.1:9100
