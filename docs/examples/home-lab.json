@@ -1,0 +1,129 @@
+{
+  "scan_timestamp": "2026-05-18T09:14:02Z",
+  "network": "192.168.1.0/24",
+  "duration_seconds": 6.31,
+  "device_count": 8,
+  "online_count": 8,
+  "devices": [
+    {
+      "ip": "192.168.1.1",
+      "mac": "00:1D:0F:AA:BB:CC",
+      "hostname": "router",
+      "os": "Network device",
+      "vendor": "TP-Link",
+      "device_type": "network",
+      "status": "online",
+      "ports": [53, 80, 443],
+      "services": ["DNS", "HTTP", "HTTPS"],
+      "latency_ms": 1.1
+    },
+    {
+      "ip": "192.168.1.5",
+      "mac": "00:0C:29:12:34:56",
+      "hostname": "db-server",
+      "os": "Linux/Unix",
+      "vendor": "VMware",
+      "device_type": "server",
+      "status": "online",
+      "ports": [22, 5432, 6379],
+      "services": ["SSH", "PostgreSQL", "Redis"],
+      "latency_ms": 2.3
+    },
+    {
+      "ip": "192.168.1.6",
+      "mac": "00:0C:29:65:43:21",
+      "hostname": "web-server",
+      "os": "Linux/Unix",
+      "vendor": "VMware",
+      "device_type": "server",
+      "status": "online",
+      "ports": [22, 80, 443, 9090],
+      "services": ["SSH", "HTTP", "HTTPS", "Prometheus"],
+      "latency_ms": 2.0
+    },
+    {
+      "ip": "192.168.1.10",
+      "mac": "00:11:32:AB:CD:EF",
+      "hostname": "nas",
+      "os": "Linux/Unix",
+      "vendor": "Synology",
+      "device_type": "server",
+      "status": "online",
+      "ports": [22, 139, 445, 5000],
+      "services": ["SSH", "NetBIOS", "SMB", "UPnP/Flask"],
+      "latency_ms": 1.8
+    },
+    {
+      "ip": "192.168.1.20",
+      "mac": "B8:27:EB:00:11:22",
+      "hostname": "pi-hole",
+      "os": "Linux/Unix",
+      "vendor": "Raspberry Pi",
+      "device_type": "server",
+      "status": "online",
+      "ports": [53, 80, 22],
+      "services": ["DNS", "HTTP", "SSH"],
+      "latency_ms": 0.9
+    },
+    {
+      "ip": "192.168.1.30",
+      "mac": "3C:2E:FF:44:55:66",
+      "hostname": "living-room-speaker",
+      "os": null,
+      "vendor": "Sonos",
+      "device_type": "iot",
+      "status": "online",
+      "ports": [1400, 1443],
+      "services": ["port/1400", "port/1443"],
+      "latency_ms": 4.7
+    },
+    {
+      "ip": "192.168.1.40",
+      "mac": "F4:F2:6D:77:88:99",
+      "hostname": "office-printer",
+      "os": null,
+      "vendor": "TP-Link",
+      "device_type": "printer",
+      "status": "online",
+      "ports": [631, 9100],
+      "services": ["IPP/Printer", "Printer/Node-Exporter"],
+      "latency_ms": 3.2
+    },
+    {
+      "ip": "192.168.1.55",
+      "mac": "00:15:5D:AA:00:11",
+      "hostname": "workstation",
+      "os": "Windows",
+      "vendor": "Microsoft (Hyper-V)",
+      "device_type": "desktop",
+      "status": "online",
+      "ports": [135, 139, 445, 3389],
+      "services": ["MSRPC", "NetBIOS", "SMB", "RDP"],
+      "latency_ms": 1.4
+    }
+  ],
+  "connections": [
+    {
+      "source_ip": "192.168.1.6",
+      "dest_ip": "192.168.1.5",
+      "protocol": "tcp",
+      "bandwidth_mbps": 42.7,
+      "latency_ms": 1.2
+    },
+    {
+      "source_ip": "192.168.1.55",
+      "dest_ip": "192.168.1.10",
+      "protocol": "tcp",
+      "bandwidth_mbps": 18.4,
+      "latency_ms": 2.1
+    },
+    {
+      "source_ip": "192.168.1.30",
+      "dest_ip": "192.168.1.1",
+      "protocol": "udp",
+      "bandwidth_mbps": 3.9,
+      "latency_ms": 5.0
+    }
+  ],
+  "alerts": []
+}
