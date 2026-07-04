@@ -92,6 +92,13 @@ cd network-topology-analyzer
 pip install .
 ```
 
+> **Свежие Debian/Ubuntu:** если `pip install .` отвечает
+> `externally-managed-environment` — это защита PEP 668, системный Python
+> нарочно не даёт ставить пакеты напрямую. Проще всего запустить
+> `scripts/install.sh` — он сам это обнаружит и поставит nettop в приватный
+> venv без участия root. Вручную то же самое: `pipx install .` или
+> `python3 -m venv .venv && .venv/bin/pip install .`.
+
 После этого команда `nettop` доступна в PATH. Можно запускать и прямо из
 каталога, без установки:
 
@@ -341,6 +348,13 @@ git clone https://github.com/Sliptval/network-topology-analyzer.git
 cd network-topology-analyzer
 pip install .
 ```
+
+> **Recent Debian/Ubuntu:** if `pip install .` fails with
+> `externally-managed-environment`, that's PEP 668 - the system Python
+> deliberately refuses direct installs. Easiest fix: run
+> `scripts/install.sh`, which detects this and installs nettop into a
+> private venv automatically, no root needed. Manually, the equivalent is
+> `pipx install .` or `python3 -m venv .venv && .venv/bin/pip install .`.
 
 This puts a `nettop` command on your PATH. You can also run it straight from a
 checkout without installing:
